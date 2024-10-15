@@ -19,35 +19,35 @@ console.log("Callbacks");
 
 //Callbacks, Antra uzduotis
 console.log("--------------");
-console.log("Antra uzduotis");
+// console.log("Antra uzduotis");
 
-function processList(anyList, anyFunc){
+// function processList(anyList, anyFunc){
 
-    const results = [];
+//     const results = [];
 
-    for(let i = 0; i<anyList.length; i++){
+//     for(let i = 0; i<anyList.length; i++){
 
-        setTimeout(()=> {
-            var element = processItem(anyList[i]);
-            results.push(element);
-        },1000)    
-    }
+//         setTimeout(()=> {
+//             var element = processItem(anyList[i]);
+//             results.push(element);
+//         },1000)    
+//     }
 
-    anyFunc(results);
-}
+//     anyFunc(results);
+// }
 
-function processItem(item){
+// function processItem(item){
 
-    item = item * 2;
-    return item;
-}
+//     item = item * 2;
+//     return item;
+// }
 
-function showResults(results){
-    console.log(results);
-}
+// function showResults(results){
+//     console.log(results);
+// }
     
 
-processList([1, 2, 3, 4, 5], showResults);
+// processList([1, 2, 3, 4, 5], showResults);
 
 
 //Promises
@@ -98,7 +98,7 @@ console.log("Promises, 2 uzduotis");
 // }
 
 
-// conditionalDelay(1000, false).then(result => {
+// conditionalDelay(1000, true).then(result => {
 //     console.log(result);
 // }).catch(error => {
 //     console.error(error);
@@ -107,52 +107,52 @@ console.log("Promises, 2 uzduotis");
 //Acync await
 console.log("Async await 1 uzduotis");
 
-// function delay(time){
+function delay(time){
 
-//     console.log("promise pradetas");
+    console.log("promise pradetas");
 
-//     var myPromise = new Promise((resolve, reject)=>{
-//         setTimeout(()=>{
-//             resolve("pavyko");
-//         },time);
+    var myPromise = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve("pavyko");
+        },time);
         
     
         
-//     });
+    });
     
-//     return myPromise;   
-// }
-
-// async function waitForMessage(time2){
-//     await delay(time2);
-//     console.log("laikas praejo");
-// }
-
-// waitForMessage(1000).then(result=>{
-//     console.log(result);
-// });
-
-console.log("Async await 2 uzduotis");
-
-async function fetchData() {
-
-    try{
-        const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
-        const data = await response.json();
-        return data;
-        
-    }
-
-    catch (error) {
-        console.error('Klaida:', error); // Gaudome klaidas
-    }
-
-    
+    return myPromise;   
 }
 
-fetchData().then(result=>{
+async function waitForMessage(time2){
+    return await delay(time2);
+    console.log("laikas praejo");
+}
+
+waitForMessage(1000).then(result=>{
     console.log(result);
 });
+
+// console.log("Async await 2 uzduotis");
+
+// async function fetchData() {
+
+//     try{
+//         const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+//         const data = await response.json();
+//         return data;
+        
+//     }
+
+//     catch (error) {
+//         console.error('Klaida:', error); // Gaudome klaidas
+//     }
+
+    
+// }
+
+// fetchData().then(result=>{
+//     console.log(result);
+// });
 
 
 
